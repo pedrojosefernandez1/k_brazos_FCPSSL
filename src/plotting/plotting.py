@@ -73,5 +73,25 @@ def plot_optimal_selections(steps: int, optimal_selections: np.ndarray, algorith
     :param algorithms: Lista de instancias de algoritmos comparados.
     """
 
-    raise NotImplementedError("Esta función aún no ha sido implementada.")
+    sns.set_theme(style="whitegrid", palette="muted", font_scale=1.2)
 
+    plt.figure(figsize=(14, 7))
+    for idx, algo in enumerate(algorithms):
+        label = get_algorithm_label(algo)
+        plt.plot(range(steps), optimal_selections[idx], label=label, linewidth=2)
+
+    plt.xlabel('Pasos de Tiempo', fontsize=14)
+    plt.ylabel('Porcentaje de Selección del Brazo Óptimo', fontsize=14)
+    plt.title('Porcentaje de Selección del Brazo Óptimo vs Pasos de Tiempo', fontsize=16)
+    plt.legend(title='Algoritmos')
+    plt.tight_layout()
+    plt.show()
+
+def plot_arm_statistics(arm_stats: LoQueConsideres, algorithms: List[Algorithm], *args):
+    """
+    Genera gráficas separadas de Selección de Arms:
+    Ganancias vs Pérdidas para cada algoritmo.
+    :param arm_stats: Lista (de diccionarios) con estadísticas de cada brazo por algoritmo.
+    :param algorithms: Lista de instancias de algoritmos comparados.
+    :param args: Opcional. Parámetros que consideres
+    """
