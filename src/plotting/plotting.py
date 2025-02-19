@@ -18,7 +18,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from algorithms import Algorithm, EpsilonGreedy
+from algorithms import Algorithm, EpsilonGreedy, UCB1, UCB2, Softmax, GradientePreferencias
 
 
 def get_algorithm_label(algo: Algorithm) -> str:
@@ -33,8 +33,14 @@ def get_algorithm_label(algo: Algorithm) -> str:
     label = type(algo).__name__
     if isinstance(algo, EpsilonGreedy):
         label += f" (epsilon={algo.epsilon})"
-    # elif isinstance(algo, OtroAlgoritmo):
-    #     label += f" (parametro={algo.parametro})"
+    elif isinstance(algo, UCB1):
+        label += f""
+    elif isinstance(algo, UCB2):
+        label += f" (alpha={algo.alpha})"
+    elif isinstance(algo, Softmax):
+        label += f" (parametro={algo.k})"
+    elif isinstance(algo, GradientePreferencias):
+        label += f" (parametro={algo.k})"
     # Añadir más condiciones para otros algoritmos aquí
     else:
         raise ValueError("El algoritmo debe ser de la clase Algorithm o una subclase.")
@@ -107,7 +113,7 @@ def plot_arm_statistics(arm_stats: Dict, algorithms: List[Algorithm], *args):
     algorithms = list(arm_stats.keys())
     k = len(next(iter(arm_stats.values()))['rewards'])
     x = np.arange(k)
-    width = 0.3
+    width = 0.95/len(algorithms) 
 
     fig, ax = plt.subplots(figsize=(14, 7))
 
