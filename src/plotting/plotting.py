@@ -33,14 +33,14 @@ def get_algorithm_label(algo: Algorithm) -> str:
     label = type(algo).__name__
     if isinstance(algo, EpsilonGreedy):
         label += f" (epsilon={algo.epsilon})"
-    elif isinstance(algo, UCB1):
-        label += f""
     elif isinstance(algo, UCB2):
         label += f" (alpha={algo.alpha})"
+    elif isinstance(algo, UCB1):
+        label += f""
     elif isinstance(algo, Softmax):
-        label += f" (parametro={algo.k})"
+        label += f" (temperature={algo.tau})"
     elif isinstance(algo, GradientePreferencias):
-        label += f" (parametro={algo.k})"
+        label += f" (alpha={algo.alpha})"
     # Añadir más condiciones para otros algoritmos aquí
     else:
         raise ValueError("El algoritmo debe ser de la clase Algorithm o una subclase.")

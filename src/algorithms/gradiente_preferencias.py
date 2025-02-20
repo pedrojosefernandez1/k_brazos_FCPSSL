@@ -17,27 +17,37 @@ import numpy as np
 from algorithms.algorithm import Algorithm
 
 class GradientePreferencias(Algorithm):
-    def __init__(self, num_arms, alpha=0.1):
-        self.num_arms = num_arms
+    def __init__(self, k, alpha=0.1):
+        super().__init__(k)
         self.alpha = alpha
-        self.preferences = np.zeros(num_arms)
+        self.preferences = np.zeros(self.k)
         self.average_reward = 0
-        self.total_pulls = 0
+        self.total_counts = 0
     
     def select_arm(self):
         """Selecciona un brazo usando el algoritmo de Gradiente de Preferencias."""
         exp_preferences = np.exp(self.preferences)
         probabilities = exp_preferences / np.sum(exp_preferences)
-        return np.random.choice(self.num_arms, p=probabilities)
+        return np.random.choice(self.k, p=probabilities)
     
     def update(self, chosen_arm, reward):
         """Actualiza las preferencias del brazo seleccionado."""
-        self.total_pulls += 1
-        self.average_reward += (reward - self.average_reward) / self.total_pulls
+        super().update(chosen_arm, reward)
+        self.total_counts += 1
+        self.average_reward += (reward - self.average_reward) / self.total_counts
         probabilities = np.exp(self.preferences) / np.sum(np.exp(self.preferences))
-        self.preferences -= self.alpha * (reward - self.average_reward) * probabilities
-        self.preferences[chosen_arm] += self.alpha * (reward - self.average_reward) * (1 - probabilities[chosen_arm])
+    
+        for arm in range(self.k):
+            if arm == chosen_arm:
+                self.preferences[chosen_arm] += self.alpha * (reward - self.average_reward) * (1 - probabilities[chosen_arm])
+            else:
+                self.preferences[arm] -= self.alpha * (reward - self.average_reward) * probabilities[arm]
 
-
-
-
+    def reset(self):
+        """
+        Reinicia el estado del algoritmo (opcional).
+        """
+        super().reset()
+        self.preferences = np.zeros(self.k)
+        self.average_reward = 0
+        self.total_counts = 0

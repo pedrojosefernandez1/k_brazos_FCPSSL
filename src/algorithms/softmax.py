@@ -17,18 +17,28 @@ import numpy as np
 from algorithms.algorithm import Algorithm
 
 class Softmax(Algorithm):
-    def __init__(self, num_arms, temperature=1.0):
-        self.num_arms = num_arms
-        self.temperature = temperature
-        self.counts = np.zeros(num_arms)
-        self.values = np.zeros(num_arms)
+    def __init__(self, k, tau=1.0):
+        """
+        Inicializa el algoritmo ucb2.
+
+        :param k: Número de brazos.
+        :param tau: Parámetro constante tau
+        :raises ValueError: Si epsilon no está en [0, ...].
+        """
+        assert 0 < tau, "El parámetro tau debe ser estrictamente mayor que 0."
+
+        super().__init__(k)
+        self.tau = tau
     
     def select_arm(self):
         """Selecciona un brazo usando la estrategia Softmax."""
-        exp_values = np.exp(self.values / (self.temperature + 1e-5))
+        exp_values = np.exp(self.values / (self.tau + 1e-5))
         probabilities = exp_values / np.sum(exp_values)
-        return np.random.choice(self.num_arms, p=probabilities)
+        return np.random.choice(self.k, p=probabilities)
 
+    def update(self, chosen_arm, reward):
+        """Actualiza las estimaciones del brazo seleccionado."""
+        super().update(chosen_arm, reward)
 
-
-
+    def reset(self):
+        super().reset()
