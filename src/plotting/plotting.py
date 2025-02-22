@@ -47,7 +47,7 @@ def get_algorithm_label(algo: Algorithm) -> str:
     return label
 
 
-def plot_average_rewards(steps: int, rewards: np.ndarray, algorithms: List[Algorithm]):
+def plot_average_rewards(steps: int, rewards: np.ndarray, algorithms: List[Algorithm], tipoDistribucion: str):
     """
     Genera la gráfica de Recompensa Promedio vs Pasos de Tiempo.
 
@@ -64,13 +64,13 @@ def plot_average_rewards(steps: int, rewards: np.ndarray, algorithms: List[Algor
 
     plt.xlabel('Pasos de Tiempo', fontsize=14)
     plt.ylabel('Recompensa Promedio', fontsize=14)
-    plt.title('Recompensa Promedio vs Pasos de Tiempo', fontsize=16)
+    plt.title('Recompensa Promedio vs Pasos de Tiempo (' + tipoDistribucion + ')', fontsize=16)
     plt.legend(title='Algoritmos')
     plt.tight_layout()
     plt.show()
 
 
-def plot_optimal_selections(steps: int, optimal_selections: np.ndarray, algorithms: List[Algorithm]):
+def plot_optimal_selections(steps: int, optimal_selections: np.ndarray, algorithms: List[Algorithm], tipoDistribucion: str):
     """
     Genera la gráfica de Porcentaje de Selección del Brazo Óptimo vs Pasos de Tiempo.
 
@@ -88,12 +88,12 @@ def plot_optimal_selections(steps: int, optimal_selections: np.ndarray, algorith
 
     plt.xlabel('Pasos de Tiempo', fontsize=14)
     plt.ylabel('Porcentaje de Selección del Brazo Óptimo', fontsize=14)
-    plt.title('Porcentaje de Selección del Brazo Óptimo vs Pasos de Tiempo', fontsize=16)
+    plt.title('Porcentaje de Selección del Brazo Óptimo vs Pasos de Tiempo (' + tipoDistribucion + ')', fontsize=16)
     plt.legend(title='Algoritmos')
     plt.tight_layout()
     plt.show()
 
-def plot_arm_statistics(arm_stats: Dict, algorithms: List[Algorithm], *args):
+def plot_arm_statistics(arm_stats: Dict, algorithms: List[Algorithm], tipoDistribucion: str, *args):
     """
     Mostrar las estadísticas de cada brazo. Cada valor en el eje X representará un brazo. En el eje
     Y se representa el promedio de las ganancias de cada brazo. El gráfico mostrará un histograma
@@ -130,7 +130,7 @@ def plot_arm_statistics(arm_stats: Dict, algorithms: List[Algorithm], *args):
         
     ax.set_xlabel("Brazos")
     ax.set_ylabel("Recompensa Promedio")
-    ax.set_title("Comparación de Recompensas Promedio por Algoritmo")
+    ax.set_title("Comparación de Recompensas Promedio por Algoritmo (" + tipoDistribucion + ')')
     ax.set_xticks(x + width / 2)
     ax.set_xticklabels([f"{i} \n(Óptimo)" if i-1 == optimal else f'{i}' for i in range(1, k+1)])
     ax.legend(title='Algoritmos')
@@ -139,7 +139,7 @@ def plot_arm_statistics(arm_stats: Dict, algorithms: List[Algorithm], *args):
     plt.show()
 
 
-def plot_regret(steps: int, regret_accumulated: np.ndarray, algorithms: List[Algorithm], *args):
+def plot_regret(steps: int, regret_accumulated: np.ndarray, algorithms: List[Algorithm], tipoDistribucion: str, *args):
     """
     Genera la gráfica de Regret Acumulado vs Pasos de Tiempo
     :param steps: Número de pasos de tiempo.
@@ -157,7 +157,7 @@ def plot_regret(steps: int, regret_accumulated: np.ndarray, algorithms: List[Alg
 
     plt.xlabel('Pasos de Tiempo', fontsize=14)
     plt.ylabel('Regret Acumulado', fontsize=14)
-    plt.title('Regret Acumulado vs Pasos de Tiempo', fontsize=16)
+    plt.title('Regret Acumulado vs Pasos de Tiempo (' + tipoDistribucion + ')', fontsize=16)
     plt.legend(title='Algoritmos')
     plt.tight_layout()
     plt.show()
