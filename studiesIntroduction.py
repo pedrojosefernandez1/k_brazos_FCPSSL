@@ -125,10 +125,6 @@ def run_experiment(bandit: Bandit, algorithms: List[Algorithm], steps: int, runs
         stats_arms_algorithms[algo]['rewards'] /= runs
 
     regret = np.cumsum(bandit.get_expected_value(optimal_arm) - rewards, axis=1)
-    #for i in range(1000):
-    #    if bandit.get_expected_value(optimal_arm) < rewards[0][i] :
-    #        print("patata")
-    #        print("bandit " + str(bandit) + " in step = " + str(i) + " optimal_arm reward " +  str(bandit.get_expected_value(optimal_arm)) + ", reward " + str(rewards[0][i]))
 
     return rewards, optimal_selections, stats_arms_algorithms, regret
 
