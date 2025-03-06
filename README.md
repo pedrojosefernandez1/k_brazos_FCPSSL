@@ -45,11 +45,6 @@ El repositorio está organizado en los siguientes notebooks:
 - **`ascensoGradiente.ipynb`**: Estudio de los métodos de **Softmax** y **Gradiente de Preferencias**.
 - **`epsilonGreedy.ipynb`**: Evaluación de la estrategia **𝜀-Greedy**.
 
-Además, se incluyen módulos auxiliares:
-- `algorithms/`: Implementación de los algoritmos.
-- `experiments/`: Código para la ejecución de experimentos.
-- `plotting/`: Funciones para visualizar los resultados.
-
 ## ▶️ Ejecución
 Para ejecutar los notebooks en Google Colab:
 Dirigirse primero de todo al notebook **`main.ipynb`** donde se podra acceder a cualquier notebook que se encuentra en el repositorio de una manera intercativa. Podria seleccionar **`introduccion.ipynb`** para ver una breve introduccion al problema y enlace a los demas estudios.
