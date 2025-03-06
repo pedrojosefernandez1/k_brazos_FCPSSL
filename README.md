@@ -1,10 +1,9 @@
-# Título del Trabajo
+# Bandido de K-Brazos
 ## Información
 - **Alumnos:** Sendra Lázaro, Ricardo Javier; Pujante Saez, Jaime; Fernández Campillo, Pedro José;
 - **Asignatura:** Extensiones de Machine Learning
 - **Curso:** 2024/2025
 - **Grupo:** FCPSSL
-# Bandido de K-Brazos
 
 ## Descripción
 Este proyecto analiza el problema del **Bandido de K-Brazos**, un escenario de **aprendizaje por refuerzo** en el que un agente debe seleccionar entre **K opciones** para maximizar su recompensa acumulada. Se estudian y comparan diferentes algoritmos en entornos **estacionarios**, evaluando su desempeño en términos de **recompensas promedio** y **regret acumulado**.
