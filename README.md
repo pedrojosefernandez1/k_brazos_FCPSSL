@@ -14,6 +14,7 @@ Para ello, se han implementado varias estrategias de toma de decisiones:
 - **Ascenso de Gradiente**: Métodos como **Softmax** y **Gradiente de Preferencias** que ajustan dinámicamente la probabilidad de selección de cada brazo.
 
 ## 📂 Estructura del Repositorio
+
 El repositorio está organizado en los siguientes notebooks:
 
 - **`introduccion.ipynb`**: Explicación teórica del problema y enlaces a los estudios específicos.
@@ -22,6 +23,23 @@ El repositorio está organizado en los siguientes notebooks:
 - **`epsilonGreedy.ipynb`**: Evaluación de la estrategia **𝜀-Greedy**.
 
 Además, el código fuente se encuentra dentro del directorio `src/`, con la siguiente estructura:
+
+```
+│── src/
+│   │── algorithms/
+│   │   │── UCB1
+│   │   │── UCB2
+│   │   │── EpsilonGreedy
+│   │   │── Softmax
+│   │   └── GradientePreferencias
+│   │── arms/
+│   │   │── Bernoulli
+│   │   │── Normal
+│   │   └── Binomial
+│   │── experiments/
+│   └── plotting/
+│── docs/
+```
 
 - **`src/algorithms/`**: Implementación de los métodos de decisión:
   - `UCB1`, `UCB2`
@@ -38,12 +56,9 @@ Además, el código fuente se encuentra dentro del directorio `src/`, con la sig
 
 - **`src/plotting/`**: Funciones para la visualización de resultados, incluyendo gráficos de recompensas, regret acumulado y selección de brazos.
 
-El repositorio está organizado en los siguientes notebooks:
+- **`docs/`**: Documentación detallada del proyecto.
 
-- **`introduccion.ipynb`**: Explicación teórica del problema y enlaces a los estudios específicos.
-- **`UCB.ipynb`**: Implementación y análisis del método **Upper Confidence Bound**.
-- **`ascensoGradiente.ipynb`**: Estudio de los métodos de **Softmax** y **Gradiente de Preferencias**.
-- **`epsilonGreedy.ipynb`**: Evaluación de la estrategia **𝜀-Greedy**.
+
 
 ## ▶️ Ejecución
 Para ejecutar los notebooks en Google Colab:
