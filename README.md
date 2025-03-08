@@ -5,7 +5,7 @@
 - **Curso:** 2024/2025
 - **Grupo:** FCPSSL
 
-## Descripción
+## 📖 Descripción
 Este proyecto analiza el problema del **Bandido de K-Brazos**, un escenario de **aprendizaje por refuerzo** en el que un agente debe seleccionar entre **K opciones** para maximizar su recompensa acumulada. Se estudian y comparan diferentes algoritmos en entornos **estacionarios**, evaluando su desempeño en términos de **recompensas promedio** y **regret acumulado**.
 
 Para ello, se han implementado varias estrategias de toma de decisiones:
