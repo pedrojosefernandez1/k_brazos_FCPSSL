@@ -1,5 +1,5 @@
-# ℹ️ Bandido de K-Brazos
-## Información
+# 🤖 Bandido de K-Brazos
+## ℹ️ Información
 - **Alumnos:** Sendra Lázaro, Ricardo Javier; Pujante Saez, Jaime; Fernández Campillo, Pedro José;
 - **Asignatura:** Extensiones de Machine Learning
 - **Curso:** 2024/2025
