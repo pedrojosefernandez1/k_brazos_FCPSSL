@@ -89,8 +89,6 @@ def run_experiment(bandit: Bandit, algorithms: List[Algorithm], steps: int, runs
 
                 rewards[idx, step] += reward # Acumular la recompensa obtenida en la matriz rewards para el algoritmo idx en el paso step.
                 total_rewards_per_algo[idx] += reward # Acumular la recompensa obtenida en total_rewards_per_algo para el algoritmo idx.
-
-                #TODO: modificar optimal_selections cuando el brazo elegido se corresponda con el brazo óptimo optimal_arm
                 optimal_selections[idx, step] += int(chosen_arm == optimal_arm) # Actualizar el porcentaje de selecciones óptimas.
         for algo in algorithms:
             stats_arms_algorithms[algo]['counts'] += np.array(algo.counts, dtype=float)
