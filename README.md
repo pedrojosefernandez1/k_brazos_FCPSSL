@@ -64,7 +64,7 @@ Además, el código fuente se encuentra dentro del directorio `src/`, con la sig
 Para ejecutar los notebooks en Google Colab:
 Dirigirse primero de todo al notebook **`main.ipynb`** donde se podra acceder a cualquier notebook que se encuentra en el repositorio de una manera intercativa. Podria seleccionar **`introduccion.ipynb`** para ver una breve introduccion al problema y enlace a los demas estudios.
 
-3. **Abre y ejecuta los notebooks** en Google Colab o Jupyter Notebook.
+**Abre y ejecuta los notebooks** en Google Colab o Jupyter Notebook.
 
 ## 🛠️ Tecnologías Utilizadas
 El proyecto está desarrollado con:
