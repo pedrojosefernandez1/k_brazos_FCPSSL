@@ -1,6 +1,6 @@
 # 🤖 Bandido de K-Brazos
 ## ℹ️ Información
-- **Alumnos:** Sendra Lázaro, Ricardo Javier; Pujante Saez, Jaime; Fernández Campillo, Pedro José;
+- **Alumnos:** Sendra Lázaro, Ricardo Javier; Pujante Sáez, Jaime; Fernández Campillo, Pedro José;
 - **Asignatura:** Extensiones de Machine Learning
 - **Curso:** 2024/2025
 - **Grupo:** FCPSSL
@@ -62,7 +62,7 @@ Además, el código fuente se encuentra dentro del directorio `src/`, con la sig
 
 ## ▶️ Ejecución
 Para ejecutar los notebooks en Google Colab:
-Dirigirse primero de todo al notebook **`main.ipynb`** donde se podra acceder a cualquier notebook que se encuentra en el repositorio de una manera intercativa. Podria seleccionar **`introduccion.ipynb`** para ver una breve introduccion al problema y enlace a los demas estudios.
+Dirigirse primero de todo al notebook **`main.ipynb`** donde se podrá acceder a cualquier notebook que se encuentra en el repositorio de una manera interactiva. Podría seleccionar **`introduccion.ipynb`** para ver una breve introducción al problema y enlace a los demás estudios.
 
 **Abre y ejecuta los notebooks** en Google Colab o Jupyter Notebook.
 
@@ -71,5 +71,3 @@ El proyecto está desarrollado con:
 - **Python 3.11**
 - **NumPy, Matplotlib, Seaborn** para cálculos y visualización de datos.
 - **Google Colab** para la ejecución interactiva.
-
-
